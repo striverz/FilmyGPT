@@ -78,7 +78,7 @@
     background: #b20710;
 }
 
-.login-form p {
+.normal-msg{
     margin-top: 20px;
     text-align: center;
     color: #bbb;
@@ -86,7 +86,7 @@
     font-size: 16px;
 }
 
-.login-form p:hover {
+.normal-msg:hover {
     color: white;
     text-decoration: underline;
 }
@@ -98,5 +98,11 @@
     width: 160px;
     z-index: 2;
 }
+.error-msg{
+    color: #e50914;
+
+}
+
+
 
 
