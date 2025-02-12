@@ -22,19 +22,6 @@ const Body = () => {
         }
     ])
 
-
-    useEffect(()=>{
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-              const uid = user.uid;
- 
-            } else {
-             
-            }
-          });
-    },[])
-
-
     return(
         <RouterProvider router={appRouter}/>
         

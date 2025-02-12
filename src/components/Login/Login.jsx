@@ -1,6 +1,6 @@
 import React, { useState,useRef } from 'react'
 import "./Login.css"
-import logo from "../../assets/logo.png"
+
 import { checkValidation } from '../../utils/validation'
 
 import { createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
@@ -8,6 +8,7 @@ import {auth} from "../../utils/firebase"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {addUser} from "../../redux/userSlice";
+import Header from '../Header/Header';
 
 const Login = () => {
 
@@ -44,9 +45,6 @@ const Login = () => {
           // Signed up 
           const user = userCredential.user;
          
-          navigate("/browse")
-
-          
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -62,7 +60,7 @@ const Login = () => {
           // Signed in 
           const user = userCredential.user;
           
-          navigate("/browse");
+         
           
         })
         .catch((error) => {
@@ -77,9 +75,8 @@ const Login = () => {
 
   return (
     <div className='login-page'>
-      <div className='logo-image'>
-        <img src={logo} alt='logo' className='logo'></img>
-      </div>
+      <Header/>
+      
       <form onSubmit={(e)=>e.preventDefault()} className='login-form' >
 
         <h1>{isLogin ? "Sign in" : "Sign Up"}</h1>
