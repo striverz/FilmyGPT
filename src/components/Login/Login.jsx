@@ -3,6 +3,9 @@ import "./Login.css"
 import logo from "../../assets/logo.png"
 import { checkValidation } from '../../utils/validation'
 
+import { createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../../utils/firebase"
+
 const Login = () => {
 
   const[isLogin,setIsLogin]=useState(1);
@@ -23,9 +26,42 @@ const Login = () => {
     
     const message= (isLogin ? checkValidation(email.current.value,password.current.value,"ManiKanta") :checkValidation(email.current.value,password.current.value,name.current.value));
     setErrorMessage(message);
+    
+    //if still i found any errors in the validation
+    if(message) return;
 
-    if(message==null){
-      console.log("form is valid");
+
+    //signUp and signIn API's for authentication using the firebase
+
+    if(!isLogin){ 
+         createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+          
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if(errorMessage=="Firebase: Error (auth/email-already-in-use).") setErrorMessage("Email is already in use.");
+
+        });
+
+    }
+    else{ 
+        signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if(errorMessage=="Firebase: Error (auth/invalid-credential).") setErrorMessage("Invalid credentials.")
+          
+        });
+
     }
   }
 
