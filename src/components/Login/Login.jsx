@@ -5,12 +5,17 @@ import { checkValidation } from '../../utils/validation'
 
 import { createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
 import {auth} from "../../utils/firebase"
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {addUser} from "../../redux/userSlice";
 
 const Login = () => {
 
   const[isLogin,setIsLogin]=useState(1);
   
   const [errorMessage,setErrorMessage]=useState(null);
+  const navigate=useNavigate();
+  const dispatch=useDispatch();
 
 
   const email=useRef();
@@ -38,6 +43,9 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up 
           const user = userCredential.user;
+         
+          navigate("/browse")
+
           
         })
         .catch((error) => {
@@ -53,6 +61,8 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
+          
+          navigate("/browse");
           
         })
         .catch((error) => {
