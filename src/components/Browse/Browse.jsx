@@ -6,8 +6,6 @@ const Browse = () => {
   return (
     <div className='browse'>
       <Header/>
-      
-      
     </div>
   )
 }

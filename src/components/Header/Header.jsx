@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import "./Header.css"
 import profile from "../../assets/profile.jpg"
 import { useNavigate } from 'react-router-dom'
-
 import {signOut } from "firebase/auth";
 import {auth} from "../../utils/firebase";
 import logo from "../../assets/logo.png"
@@ -18,7 +17,7 @@ const Header = () => {
     const navigate=useNavigate();
 
     const userFound=useSelector(store=>store.user);
-    console.log(userFound);
+   
 
     const dispatch=useDispatch();
 
@@ -27,7 +26,7 @@ const Header = () => {
         signOut(auth).then(() => {
           const confirmLogout = window.confirm("Are you sure you want to logout?");
             
-            // if(confirmLogout) navigate("/");
+            
           }).catch((error) => {
             
           });
