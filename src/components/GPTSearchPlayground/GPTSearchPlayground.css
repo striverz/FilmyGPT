@@ -1,0 +1,8 @@
+.gpt-search-ground{
+    border: solid red 2px;
+    background-color: #fff;
+    height: 100vh;
+    background-image: url("../../assets/some_where.jpeg");
+    background-size: cover;
+    background-position: center;
+}

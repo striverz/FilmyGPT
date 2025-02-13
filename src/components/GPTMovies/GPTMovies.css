@@ -1,0 +1,6 @@
+.gpt-movies{
+    margin-top: 5px;
+    height: 65vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}

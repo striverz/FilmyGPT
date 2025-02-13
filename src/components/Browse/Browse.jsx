@@ -7,6 +7,9 @@ import useNowPlayingMovies from '../../hooks/useNowPlayingMovies'
 import usePopularMovies from '../../hooks/usePopularMovies'
 import useTopRatedMovies from '../../hooks/useTopRatedMovies'
 import useUpComingMovies from '../../hooks/useUpComingMovies'
+import GPTSearchPlayground from '../GPTSearchPlayground/GPTSearchPlayground'
+import { useSelector } from 'react-redux'
+
 
 const Browse = () => {
   useNowPlayingMovies();
@@ -14,11 +17,20 @@ const Browse = () => {
   useTopRatedMovies();
   useUpComingMovies();
 
+  const gptView=useSelector(store=>store.gpt.toogleGPTSearch);
+
   return (
     <div className='browse'>
       <Header/>
-      <PrimaryBrowse/>
-      <SecondaryBrowse/>
+     {
+     gptView ?  <GPTSearchPlayground/> :
+     <>
+     <PrimaryBrowse/>
+     <SecondaryBrowse/>
+     </>
+     }
+      
+      
     </div>
   )
 }

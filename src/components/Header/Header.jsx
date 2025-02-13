@@ -8,18 +8,29 @@ import logo from "../../assets/logo.png"
 import { useDispatch, useSelector } from 'react-redux';
 import {onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from '../../redux/userSlice';
+import { toogleGPT } from '../../redux/gptSlice';
 
 
 
 
 
 const Header = () => {
+
+    
+
+    
     const navigate=useNavigate();
 
     const userFound=useSelector(store=>store.user);
    
 
     const dispatch=useDispatch();
+    const handleGPTSearch=()=>{
+      dispatch(toogleGPT());
+      
+
+    }
+   
 
     const handleSignoutAuth=()=>{
       
@@ -57,7 +68,7 @@ const Header = () => {
     <div className='browse-header'>
      {!userFound && <div className='logo-image'><img src={logo} alt='logo' className='logo'></img></div>}
      {userFound && <div className='profile-img'>
-      <button className='gpt-search-btn'>GPT Search🪄</button>
+      <button className='gpt-search-btn' onClick={handleGPTSearch}>GPT Search🪄</button>
       <img onClick={handleSignoutAuth}src={profile} className='profile-icon'  alt='profile-icon'></img>
       </div>}
     </div>
