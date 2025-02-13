@@ -57,7 +57,7 @@ const Header = () => {
     <div className='browse-header'>
      {!userFound && <div className='logo-image'><img src={logo} alt='logo' className='logo'></img></div>}
      {userFound && <div className='profile-img'>
-      <button className='gpt-search-btn'>GPT Search</button>
+      <button className='gpt-search-btn'>GPT Search🪄</button>
       <img onClick={handleSignoutAuth}src={profile} className='profile-icon'  alt='profile-icon'></img>
       </div>}
     </div>
