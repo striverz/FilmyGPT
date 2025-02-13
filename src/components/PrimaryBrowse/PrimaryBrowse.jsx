@@ -10,13 +10,13 @@ const PrimaryBrowse = () => {
   const movieData=useSelector(store=>store.movies.nowPlayingMovies);
   if(!movieData) return; //return for Initial rendering
 
-  const {original_title,id}=movieData[1];
+  const {original_title,id}=movieData[0];
  
 
  
   return (
     <div className='primary-browse'>
-        {/* <VideoTitle title={original_title}/> */}
+        <VideoTitle title={original_title}/>
         <VideoBackground id={id}/>
     </div>
   )
