@@ -1,4 +1,30 @@
-.secondary-browse{
-    color: red;
-    
+.secondary-browse {
+    position: relative;
+    margin-top: -260px; /* Default for larger screens */
+    width: 100%;
+    color: white;
+    z-index: 10; /* Ensure it stays on top */
+    /* border: solid blue 2px; */
+    background-color: transparent
+}
+
+/* For tablets (width < 1024px), reduce the margin */
+@media (max-width: 1024px) {
+    .secondary-browse {
+        margin-top: -120px;
+    }
+}
+
+/* For mobile screens (width < 768px), reduce even more */
+@media (max-width: 768px) {
+    .secondary-browse {
+        margin-top: -80px;
+    }
+}
+
+/* For very small phones (width < 480px), minimize overlap */
+@media (max-width: 480px) {
+    .secondary-browse {
+        margin-top: -50px;
+    }
 }

@@ -1,0 +1,14 @@
+.movie-list{
+    padding: 10px;
+}
+.movie-list h1{
+    margin-left:11px;
+}
+
+.movie-card-section{
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    
+
+}

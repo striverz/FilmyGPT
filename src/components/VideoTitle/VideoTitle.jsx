@@ -5,7 +5,7 @@ const VideoTitle = ({title}) => {
  
   return (
     <div className='video-title'>
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <div>
         <button>Play</button>
         <button>More Info</button>

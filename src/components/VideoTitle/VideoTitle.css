@@ -1,9 +1,9 @@
 .video-title {
     position: absolute;
     top: 60%;                    /* Keep original position */
-    left: 15px;                   /* Keep original position */
+    left: 5px;                   /* Keep original position */
     transform: translateY(-50%);   /* Keep original centering */
-    width: 400px;                 /* Keep original width */
+    width: 450px;                 /* Keep original width */
     z-index: 10;                  /* Ensure it's above the video */
     padding: 20px;                /* More padding for a cleaner look */
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); /* Modern gradient effect */
@@ -14,7 +14,7 @@
 }
 
 /* Title Styling */
-.video-title h1 {
+.video-title h2 {
     font-size: 34px;              /* Slightly larger font */
     font-weight: bold;
     margin-bottom: 15px;
