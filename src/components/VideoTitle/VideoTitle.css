@@ -1,3 +1,90 @@
-.video-title{
-    border: solid black 1px;
+.video-title {
+    position: absolute;
+    top: 60%;                    /* Keep original position */
+    left: 15px;                   /* Keep original position */
+    transform: translateY(-50%);   /* Keep original centering */
+    width: 400px;                 /* Keep original width */
+    z-index: 10;                  /* Ensure it's above the video */
+    padding: 20px;                /* More padding for a cleaner look */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); /* Modern gradient effect */
+    color: white;                 /* Keep white text */
+    border-radius: 10px;          /* Softer rounded corners */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Light shadow for depth */
+    backdrop-filter: blur(5px);   /* Glass effect for a modern touch */
+}
+
+/* Title Styling */
+.video-title h1 {
+    font-size: 34px;              /* Slightly larger font */
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 1.2px;        /* More spacing for readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Soft text shadow */
+}
+
+/* Buttons Container */
+.video-title div {
+    display: flex;
+    gap: 12px; /* Space between buttons */
+}
+
+/* Button Styling */
+.video-title button {
+    background-color: #e50914; /* Netflix-style red */
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Play Button Hover */
+.video-title button:hover {
+    background-color: #b20710;
+    transform: scale(1.07);
+}
+
+/* More Info Button */
+.video-title button:nth-child(2) {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
+    border: 1px solid white;
+    color: white;
+}
+
+/* More Info Button Hover */
+.video-title button:nth-child(2):hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.07);
+}
+
+/* Tablet Responsiveness (No Position Changes) */
+@media (max-width: 1024px) {
+    .video-title {
+        width: 70%;              
+        left: 2%;              
+        top: 20%;
+        transform: translateY(0); 
+    }
+    
+    .video-title h1 {
+        font-size: 28px;
+    }
+    
+    .video-title button {
+        padding: 10px 18px;
+        font-size: 15px;    
+    }
+}
+
+/* Mobile Responsiveness (No Position Changes) */
+@media (max-width: 768px) {
+    .video-title {
+        display: none; /* Hide title on mobile */
+    }
 }

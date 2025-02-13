@@ -3,7 +3,7 @@ import "./SecondaryBrowse.css"
 
 const SecondaryBrowse = () => {
   return (
-    <div>SecondaryBrowse</div>
+    <div className='secondary-browse'>SecondaryBrowse</div>
   )
 }
 
