@@ -42,8 +42,10 @@
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    transition: background 0.3s ease-in-out;
+    /* transition: background 0.3s ease-in-out; */
+    transition: all 0.3s ease-in-out;
     box-shadow: 0px 4px 10px rgba(255, 105, 180, 0.3);
+
 }
 
 .gpt-search button:hover {
