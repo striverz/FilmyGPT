@@ -34,13 +34,10 @@ const Header = () => {
     const handleSignoutAuth=()=>{
       
         signOut(auth).then(() => {
-          const confirmLogout = window.confirm("Are you sure you want to logout?");
-            
-            
+          const confirmLogout = window.confirm("Are you sure you want to logout?"); 
           }).catch((error) => {
             
-          });
-        
+          });    
     }
     
 

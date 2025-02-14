@@ -51,7 +51,7 @@ const GPTSearch = () => {
   return (
     <div className='gpt-search'>
         <div>
-        <input  ref={searchText} type='text' placeholder='Search for you own movies Ai'></input>
+        <input  ref={searchText} type='text' placeholder='Search for a movie. Let AI lead the way!'></input>
         <button onClick={handleGPTSearch}>Search</button>
         </div>
         

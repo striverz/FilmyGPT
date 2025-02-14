@@ -5,6 +5,9 @@ import useWatchPlayerVideo from '../../hooks/useWatchPlayerVideo';
 import { useDispatch, useSelector } from 'react-redux';
 import "./WatchPlayer.css"
 import { removeWatchPlayerVideo } from '../../redux/moviesSlice';
+import { useState } from 'react';
+import logo from '../../assets/logo.png'
+import { IoSunny } from "react-icons/io5";
 
 
 const WatchPlayer = () => {
@@ -13,15 +16,26 @@ const WatchPlayer = () => {
   useWatchPlayerVideo(movieId);
   const navigate=useNavigate();
 
+  const [isDarkMode,setIsDarkMode]=useState(false);
+  const handleDarkMode=()=>{
+    setIsDarkMode(!isDarkMode);
+  }
+
+
 
   const watchData=useSelector(store=>store.movies. watchPlayerVideo);
   if(!watchData) return;
   console.log(watchData);
 
   return (
-    <div>
+    <div className={isDarkMode ? 'watch-player-component-white' : 'watch-player-component-black'}>
       <div className='watch-player-header'>
+        <img src={logo} className='logo'></img>
+        <div>
+        <button  onClick={handleDarkMode} className='wow-btn'>{isDarkMode ? "☀️" : "🌙"}</button>
         <button  onClick={()=>navigate("/browse")} className='wow-btn'>🏠</button>
+        </div>
+       
       </div>
 
       <div className='watch-player-section'>

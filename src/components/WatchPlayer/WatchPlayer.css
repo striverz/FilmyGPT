@@ -1,26 +1,37 @@
+.watch-player-component-white{
+    
+    background-color: white;
+
+}
+.watch-player-component-black{
+    background-color: black;
+}
+
 .watch-player-header {
     position: absolute;
     width: 100%;
     height: 60px;
-
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: end;
-    padding: 0px 20px;
-    background-color: rgba(0, 0, 0, 0); /* Slight background for visibility */
+    padding: 0px 30px;
+
 }
 
 .wow-btn {
     background: linear-gradient(90deg, #ff6a00, #ee0979);
     border: none;
     color: white;
-    padding: 10px 16px;
+    padding: 9px 12px;
     font-size: 14px;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 4px 10px rgba(255, 105, 180, 0.3);
+    margin: 0px 5px;
+    
+    
 }
 
 .wow-btn:hover {
@@ -35,15 +46,17 @@
     justify-content: center;
     height: 100vh;
     width: 100%;
-    background-color: black; /* Background for better visibility */
+
+    /* border: solid green 2px; */
 }
 
 .watch-player {
     width: 90%;
-    height: 90vh;
-    max-width: 1440px; /* Bigger width */
-    max-height: 810px;  /* Bigger height */ 
+    height: 85vh;
+    max-width: 1440px; 
+    max-height: 810px;   
     border: none;
     border-radius: 12px;
     box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
 }

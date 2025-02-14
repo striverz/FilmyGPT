@@ -3,19 +3,19 @@
     top: 60%;                    /* Keep original position */
     left: 5px;                   /* Keep original position */
     transform: translateY(-50%);   /* Keep original centering */
-    width: 450px;                 /* Keep original width */
+    width: 400px;                 /* Keep original width */
     z-index: 10;                  /* Ensure it's above the video */
     padding: 20px;                /* More padding for a cleaner look */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); /* Modern gradient effect */
+    /* background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));  */
     color: white;                 /* Keep white text */
     border-radius: 10px;          /* Softer rounded corners */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Light shadow for depth */
-    backdrop-filter: blur(5px);   /* Glass effect for a modern touch */
+    /* box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);  */
+   
 }
 
 /* Title Styling */
 .video-title h2 {
-    font-size: 34px;              /* Slightly larger font */
+    font-size: 30px;              /* Slightly larger font */
     font-weight: bold;
     margin-bottom: 15px;
     letter-spacing: 1.2px;        /* More spacing for readability */
@@ -67,13 +67,13 @@
 @media (max-width: 1024px) {
     .video-title {
         width: 70%;              
-        left: 2%;              
-        top: 20%;
+        left: 1%;              
+        top: 18%;
         transform: translateY(0); 
     }
     
     .video-title h1 {
-        font-size: 28px;
+        font-size: 25px;
     }
     
     .video-title button {

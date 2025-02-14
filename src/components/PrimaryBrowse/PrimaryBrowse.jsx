@@ -16,7 +16,7 @@ const PrimaryBrowse = () => {
  
   return (
     <div className='primary-browse'>
-        <VideoTitle title={original_title}/>
+        <VideoTitle title={original_title} id={id}/>
         <VideoBackground id={id}/>
     </div>
   )
