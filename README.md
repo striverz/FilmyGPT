@@ -4,12 +4,6 @@ FilmyGPT is a next-generation movie streaming and recommendation platform, simil
 
 ## Features
 
-# FilmyGPT
-
-FilmyGPT is a next-generation movie streaming and recommendation platform, similar to Netflix but with enhanced features. It not only provides access to a vast collection of movies and trailers but also incorporates AI-powered search functionality. Users can search for movies using natural language queries like "Indian funny movies," and FilmyGPT suggests relevant movies based on their preferences.
-
-## Features
-
 - **Movie Streaming**: Watch your favorite movies seamlessly with high-quality streaming.
 - **AI-Powered Search**: GPT-powered search allows users to find movies based on their mood, genre, or preferences.
 - **Movie Database Integration**: Uses the TMDB API for extensive movie details, ratings, and trailers.

@@ -25,7 +25,6 @@ const WatchPlayer = () => {
 
   const watchData=useSelector(store=>store.movies. watchPlayerVideo);
   if(!watchData) return;
-  console.log(watchData);
 
   return (
     <div className={isDarkMode ? 'watch-player-component-white' : 'watch-player-component-black'}>
