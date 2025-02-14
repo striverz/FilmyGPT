@@ -5,17 +5,22 @@ const gptSlice=createSlice({
     initialState:{
         toogleGPTSearch:false,
         gptRecommendedMovies:null,
+        shimmerUI:false
+        
     },
     reducers:{
         toogleGPT:(state,action)=>{
             state.toogleGPTSearch=!state.toogleGPTSearch;
         },
         addGPTMovies:(state,action)=>{
-            state.gptRecommendedMovies=action.payload;
-            
+            state.gptRecommendedMovies=action.payload;   
+        },
+        toogleShimmerUI:(state,action)=>{
+            state.shimmerUI=!state.shimmerUI;
         }
+
     }
 })
 
-export const {toogleGPT,addGPTMovies}=gptSlice.actions;
+export const {toogleGPT,addGPTMovies,toogleShimmerUI}=gptSlice.actions;
 export default gptSlice.reducer;

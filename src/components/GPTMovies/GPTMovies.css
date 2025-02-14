@@ -1,6 +1,57 @@
-.gpt-movies{
+.gpt-movies {
     margin-top: 5px;
     height: 65vh;
     overflow-y: scroll;
-    scrollbar-width: none;
-}
+    scrollbar-width: none; /* Hides the scrollbar */
+    -ms-overflow-style: none; /* For Internet Explorer */
+  }
+  
+  .shimmer-ui-section {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .shimmer-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+  }
+  
+  .section {
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(240, 240, 240, 0.5) 25%, rgba(224, 224, 224, 0.5) 50%, rgba(240, 240, 240, 0.5) 75%); /* Semi-transparent gradient */
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border: 1px solid rgba(221, 221, 221, 0.8); /* Slightly transparent border */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .section:hover {
+    transform: scale(1.1);
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    50% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  

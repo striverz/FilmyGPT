@@ -1,15 +1,18 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import "./GPTSearch.css"
 import {openai} from "../../utils/openai";
 import { API_OPTIONS } from '../../utils/constants';
 import { useDispatch } from 'react-redux';
-import { addGPTMovies } from '../../redux/gptSlice';
+import { addGPTMovies, toogleShimmerUI } from '../../redux/gptSlice';
+
 
 const GPTSearch = () => {
 
   const dispatch=useDispatch();
 
   const searchText=useRef(null);
+
+  const [loading,setLoading]=useState(false);
 
   const handleGPTMovies= async(movie)=>{
 
@@ -21,6 +24,7 @@ const GPTSearch = () => {
   }
 
   const handleGPTSearch= async()=>{
+    dispatch(toogleShimmerUI());
 
     
     const gptQuery =
@@ -36,16 +40,14 @@ const GPTSearch = () => {
 
       const resultsArray=gptResults?.choices?.[0]?.message?.content.split(",");
 
+      
+
+
       const promisedArray=resultsArray.map((movie)=>handleGPTMovies(movie));
 
       const promisifiedResults=await Promise.all(promisedArray);
-      
-
       dispatch(addGPTMovies({movieNames:resultsArray,moviesInfo:promisifiedResults}));
-
-     
-
-    
+      dispatch(toogleShimmerUI());
 
   }
   return (
@@ -54,6 +56,8 @@ const GPTSearch = () => {
         <input  ref={searchText} type='text' placeholder='Search for a movie. Let AI lead the way!'></input>
         <button onClick={handleGPTSearch}>Search</button>
         </div>
+        
+       
         
     </div>
   )

@@ -15,7 +15,7 @@ const MovieCard = ({poster,id}) => {
   }
   return (
     <div className='movie-card'>
-        <img onClick={handleMovieCard} src={MOVIE_IMG_CDN+poster} className='movie-card-img'></img>
+      {poster&& <img onClick={handleMovieCard} src={MOVIE_IMG_CDN+poster} className='movie-card-img'></img>}
     </div>
   )
 }
