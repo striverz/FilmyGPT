@@ -32,13 +32,16 @@ const Header = () => {
    
 
     const handleSignoutAuth=()=>{
+      const confirmLogout = window.confirm("Are you sure you want to logout?"); 
+      if(confirmLogout){
+
       
         signOut(auth).then(() => {
-          const confirmLogout = window.confirm("Are you sure you want to logout?"); 
+         
           }).catch((error) => {
             
           });    
-    }
+    } }
     
 
         useEffect(()=>{
