@@ -1,10 +1,11 @@
 import React from 'react'
 import MovieCard from '../MovieCard/MovieCard'
 import "./MoviesList.css"
+//20 movies kavali ekkadaki
 const MoviesList = ({title,movies}) => {
   return (
     <div className='movie-list'>
-        <h1>{title}</h1>
+       {movies&& <h1>{title}</h1>}
         <div className='movie-card-section'>
             { movies &&
                 movies.map((movie)=>{
