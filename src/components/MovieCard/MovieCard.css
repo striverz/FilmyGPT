@@ -1,6 +1,11 @@
-.movie-card-img{
+.movie-card-img {
     width: 150px;
     margin: 10px;
     border-radius: 10px;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+
+.movie-card-img:hover {
+    transform: scale(1.1); /* Slightly enlarges the image */
 }
