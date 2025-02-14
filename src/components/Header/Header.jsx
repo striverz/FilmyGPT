@@ -25,10 +25,9 @@ const Header = () => {
    
 
     const dispatch=useDispatch();
+    const gptVal=useSelector(store=>store.gpt.toogleGPTSearch);
     const handleGPTSearch=()=>{
       dispatch(toogleGPT());
-      
-
     }
    
 
@@ -68,7 +67,7 @@ const Header = () => {
     <div className='browse-header'>
      {!userFound && <div className='logo-image'><img src={logo} alt='logo' className='logo'></img></div>}
      {userFound && <div className='profile-img'>
-      <button className='gpt-search-btn' onClick={handleGPTSearch}>GPT Search🪄</button>
+      <button className='gpt-search-btn' onClick={handleGPTSearch}>{!gptVal ? "GPT Search🪄": "Home Page🏠"}</button>
       <img onClick={handleSignoutAuth}src={profile} className='profile-icon'  alt='profile-icon'></img>
       </div>}
     </div>
